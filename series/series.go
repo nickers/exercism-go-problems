@@ -14,5 +14,12 @@ func All(n int, s string) []string {
 }
 
 func UnsafeFirst(n int, s string) string {
-	return All(n, s)[0]
+	return s[:n]
+}
+
+func First(n int, s string) (string, bool) {
+	if n > len(s) {
+		return "", false
+	}
+	return s[:n], true
 }
