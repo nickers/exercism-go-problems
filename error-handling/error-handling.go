@@ -12,9 +12,7 @@ func Use(o ResourceOpener, input string) (ret error) {
 		}
 	}
 
-	defer func() {
-		r.Close()
-	}()
+	defer r.Close()
 
 	defer func() {
 		if x := recover(); x != nil {
